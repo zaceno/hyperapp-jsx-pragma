@@ -1,0 +1,24 @@
+{
+    "name": "hyperapp-jsx-pragma",
+    "version": "1.0.0",
+    "description": "Pragma for using jsx with hyperapp",
+    "main": "index.js",
+    "module": "index.js",
+    "type": "module",
+    "unpkg": "dist.js",
+    "scripts": {
+        "build": "rollup index.js --no-strict -f es --external hyperapp | terser -m -c --toplevel | sed \"s/hyperapp/https:\\/\\/unpkg.com\\/hyperapp/g\" > dist.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "rollup": "^2.10.2",
+        "terser": "^4.6.13"
+    },
+    "peerDependencies": {
+        "hyperapp": "^2.0.5"
+    },
+    "bugs": {
+        "url": "https://github.com/zaceno/hyperapp-jsx-pragma/issues"
+    },
+    "homepage": "https://github.com/zaceno/hyperapp-jsx-pragma#readme"
+}
