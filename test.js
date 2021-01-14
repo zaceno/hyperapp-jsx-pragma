@@ -22,5 +22,15 @@ export default [
 		jsx("p", {}, 42)
 	  ),
     ]),
+    t("nested arrays of children are flattened", [
+      deepEqual(
+	    h("p", {}, [text("a"), text("b")]),
+	    jsx("p", {}, ["a", ["b"]]),
+	  ),
+      deepEqual(
+	    h("p", {}, [text("a"), text("b"), text("c"), text("d")]),
+	    jsx("p", {}, ["a", ["b", ["c"], "d"]]),
+	  ),
+    ]),
   ]),
 ]
