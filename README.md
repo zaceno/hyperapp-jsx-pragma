@@ -15,6 +15,16 @@ export default props => (
 )
 ```
 
+## Set up
+
+Install it with:
+
+```
+npm i hyperapp-jsx-pragma
+```
+
+There is a peer dependency on hyperapp > 2.0.8 so make sure that is installed as well
+
 You may need to set the pragma in your `.babelrc`:
 
 ```
@@ -29,5 +39,6 @@ You may need to set the pragma in your `.babelrc`:
   ]
 }
 ```
+
 
 Fragments (`<>...</>`) are not supported and I am not planning on supporting any future JSX features.
