@@ -13,6 +13,7 @@
     },
     "devDependencies": {
         "c8": "*",
+        "hyperapp": "^2.0.8",
         "twist": "*"
     },
     "bugs": {
