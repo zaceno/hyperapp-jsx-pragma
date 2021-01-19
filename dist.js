@@ -1,0 +1,1 @@
+import{h as r,text as p}from"https://unpkg.com/hyperapp";function t(r,p=[]){return r.forEach((r=>{Array.isArray(r)?t(r,p):p.push(r)})),p}export default(o,e,...f)=>"function"==typeof o?o(e,t(f)):r(o,e||{},t(f).map((r=>"string"==typeof r||"number"==typeof r?p(r):r)));

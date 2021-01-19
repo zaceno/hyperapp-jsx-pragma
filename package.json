@@ -1,11 +1,13 @@
 {
     "name": "hyperapp-jsx-pragma",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Pragma for using jsx with hyperapp",
     "main": "index.js",
     "module": "index.js",
     "type": "module",
+    "unpkg": "dist.js",
     "scripts": {
+        "build": "rollup index.js --no-strict -f es --external hyperapp | terser -m -c --toplevel | sed \"s/hyperapp/https:\\/\\/unpkg.com\\/hyperapp/g\" > dist.js",
         "test": "c8 twist test.js"
     },
     "peerDependencies": {
@@ -14,6 +16,8 @@
     "devDependencies": {
         "c8": "*",
         "hyperapp": "^2.0.8",
+        "rollup": "^2.37.0",
+        "terser": "^5.5.1",
         "twist": "*"
     },
     "bugs": {
