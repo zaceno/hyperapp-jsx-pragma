@@ -8,8 +8,9 @@ function flattenAll(input, result = []) {
     return result
 }
 
-export default (type, props, ...children) =>
-    typeof type === 'function'
+export default (type, { children: children1, ...props }, ...children2) => {
+    const children = [].concat(children1).concat(children2);
+    return typeof type === 'function'
         ? type(props, flattenAll(children))
         : h(
               type,
@@ -20,3 +21,4 @@ export default (type, props, ...children) =>
                       : child
               )
           )
+}
